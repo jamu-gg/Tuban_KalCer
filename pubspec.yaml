@@ -1,0 +1,33 @@
+name: tuban_kalcer # nama paket aplikasi Flutter
+description: Aplikasi edukasi budaya Tuban dengan gamifikasi profil gaya Discord. # deskripsi singkat aplikasi
+publish_to: "none" # aplikasi tidak dipublikasikan ke pub.dev
+version: 1.0.0+1 # versi aplikasi dan nomor build
+
+environment: # batas versi SDK yang dipakai
+  sdk: ">=3.4.0 <4.0.0" # versi Dart minimal 3.4 (Flutter 3.22 ke atas)
+
+dependencies: # daftar pustaka yang dipakai aplikasi
+  flutter: # SDK Flutter
+    sdk: flutter # diambil dari SDK Flutter
+  sqflite: ^2.3.3 # database SQLite untuk penyimpanan lokal
+  sqflite_common_ffi_web: ">=0.4.3 <2.0.0" # SQLite untuk web (Chrome); versi dipilih otomatis sesuai SDK Anda
+  path: ^1.9.0 # membantu menyusun lokasi file database
+  provider: ^6.1.2 # state management (ChangeNotifier)
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1      # <- hanya baris ini yang ditambahkan
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+flutter_launcher_icons:                # blok ini tetap di paling bawah, tanpa indentasi
+  android: true
+  ios: false                           # tidak ada folder ios, jadi dimatikan
+  image_path: "assets/images/ios_icon_1024.png"
+  adaptive_icon_background: "#FBF4E2"
+  adaptive_icon_foreground: "assets/images/icon_foreground_1024.png"
